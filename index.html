@@ -11,22 +11,34 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!--CSS-->
     <link rel="stylesheet" href="main.css">
+    <!--Font awesome-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+        crossorigin="anonymous"></script>
     <title>Quote machine</title>
 </head>
 
 <body>
 
-    <div class="container-fluid bg-secondary h-100">
-        <div class="row text-center justify-content-center border-bottom">
-            <h1 class="display-3 text-light"> Quote machine</h1>
+    <div class="container-fluid bg-warning h-100">
+        <div class="row text-center justify-content-center">
+            <h1 class="display-3 text-primary "> Quote machine</h1>
         </div>
         <div class="row bg-primary h-75 align-items-center justify-content-center">
             <div class="col-8 bg-warning rounded shadow p-4" id="quote-box">
-                <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quibusdam quae
-                    excepturi
-                    perferendis quos provident. Perferendis omnis, nihil repudiandae beatae nostrum minima quisquam
-                    iusto est in magnam earum nesciunt, nobis suscipit ullam ab facere! Architecto vero ullam officia
-                    velit. Tempora sit quas optio iste recusandae animi, quaerat aliquam corrupti sapiente!</p>
+                <blockquote class="blockquote text-right" id="text">
+                    <p>
+                        <i class="fas fa-quote-left fa-2x mr-3"></i>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem eius, nisi libero officiis
+                        tempore
+                        ut!
+                    </p>
+                    <footer class="blockquote-footer text-left" id="author">master coder</footer>
+                </blockquote>
+                <button type="button" class="btn btn-outline-info btn-sm" id="new-quote">New quote</button>
+                <a href="https://twitter.com/intent/tweet" id="tweet-quote"><button type="button"
+                        class="btn btn-outline-info btn-sm"><i class="fab fa-twitter mx-2"></i></button></a>
+
+
             </div>
         </div>
     </div>
@@ -37,6 +49,8 @@
     <!-- Optional JavaScript -->
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <script src="script.js"></script>
+    <!--font awesome-->
+    <script src="./js/all.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
