@@ -3,6 +3,9 @@ body{
     font-family: 'Piedra', sans-serif;
 }
 
+h1 {
+  font-family: 'Raleway', sans-serif;}
+
 .fade-in {
     animation: fadeIn ease .5s;
    
