@@ -13,21 +13,34 @@ fetch('https://quote-garden.herokuapp.com/api/v2/quotes?page=2&limit=1000')
     .then(function (data) {
         quotes_arr = data.quotes;
         quotes_number = quotes_arr.length;
-        console.log(quotes_arr[0].quoteText);
-        new_quote()
+        console.log('pierwszy', quotes_arr[0].quoteText);
+        new_quote();
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+        new_quote();
     });
 
 new_button.addEventListener('click', new_quote);
 tweet_button.addEventListener('click', tweet_quote);
 
 function new_quote() {
-    quote_box.classList.add("fade-in");
-    let index = random_number(quotes_number);
-    console.log('index', index, quotes_arr[index]);
-    quote_box.style.transition
-    quote_text.innerHTML = '<i class="fas fa-quote-left fa-2x mr-3"></i>' + quotes_arr[index].quoteText;
-    author.innerHTML = quotes_arr[index].quoteAuthor;
-    setTimeout(function () { quote_box.classList.remove("fade-in"); }, 1000);
+    if (quotes_number > 0) {
+        quote_box.classList.add("fade-in");
+        let index = random_number(quotes_number);
+        console.log('index', index, quotes_arr[index]);
+        quote_box.style.transition
+        quote_text.innerHTML = '<i class="fas fa-quote-left fa-2x mr-3"></i>' + quotes_arr[index].quoteText;
+        author.innerHTML = quotes_arr[index].quoteAuthor;
+        setTimeout(function () { quote_box.classList.remove("fade-in"); }, 1000);
+    } else {
+        quote_box.classList.add("fade-in");
+        quote_box.style.transition
+        quote_text.innerHTML = 'Sorry. Quotes unavailable. Try again later';
+        setTimeout(function () { quote_box.classList.remove("fade-in"); }, 1000);
+
+    }
+
 
 }
 
