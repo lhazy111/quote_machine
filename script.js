@@ -6,14 +6,14 @@ let quote_text = document.getElementById('text');
 let author = document.getElementById('author');
 let new_button = document.getElementById('new-quote');
 let tweet_button = document.getElementById('tweet-quote');
-fetch('https://type.fit/api/quotes')
+fetch('https://quote-garden.herokuapp.com/api/v2/quotes?page=2&limit=1000')
     .then(function (response) {
         return response.json();
     })
     .then(function (data) {
-        console.log(data[100].text);
-        quotes_arr = data;
-        quotes_number = data.length;
+        quotes_arr = data.quotes;
+        quotes_number = quotes_arr.length;
+        console.log(quotes_arr[0].quoteText);
         new_quote()
     });
 
@@ -25,8 +25,8 @@ function new_quote() {
     let index = random_number(quotes_number);
     console.log('index', index, quotes_arr[index]);
     quote_box.style.transition
-    quote_text.innerHTML = '<i class="fas fa-quote-left fa-2x mr-3"></i>' + quotes_arr[index].text;
-    author.innerHTML = quotes_arr[index].author;
+    quote_text.innerHTML = '<i class="fas fa-quote-left fa-2x mr-3"></i>' + quotes_arr[index].quoteText;
+    author.innerHTML = quotes_arr[index].quoteAuthor;
     setTimeout(function () { quote_box.classList.remove("fade-in"); }, 1000);
 
 }
